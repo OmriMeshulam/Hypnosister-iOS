@@ -10,6 +10,7 @@
 
 @implementation OGMHypnosisView
 
+
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -17,6 +18,7 @@
         // All the OGMHypnosisViews start with a clear background color
         self.backgroundColor = [UIColor clearColor];
     }
+    
     return self;
 }
 
@@ -50,6 +52,9 @@
     
     // Drawing the line
     [path stroke];
+    
+    UIImage *logoImage = [UIImage imageNamed:@"matrix.png"];
+    [logoImage drawInRect:rect];
     
 }
 

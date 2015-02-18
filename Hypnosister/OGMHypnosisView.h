@@ -10,4 +10,5 @@
 
 @interface OGMHypnosisView : UIView
 
+
 @end
