@@ -16,6 +16,7 @@
 		C8B9D5D81A93EAE30086EF13 /* HypnosisterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C8B9D5D71A93EAE30086EF13 /* HypnosisterTests.m */; };
 		C8B9D5E31A93EC3C0086EF13 /* OGMHypnosisView.m in Sources */ = {isa = PBXBuildFile; fileRef = C8B9D5E21A93EC3C0086EF13 /* OGMHypnosisView.m */; };
 		C8F1F9811A94777500247A9F /* matrix.png in Resources */ = {isa = PBXBuildFile; fileRef = C8F1F9801A94777500247A9F /* matrix.png */; };
+		C8F1FEFC1A947FBA00247A9F /* Hypnosister-120.png in Resources */ = {isa = PBXBuildFile; fileRef = C8F1FEF91A947FBA00247A9F /* Hypnosister-120.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		C8B9D5E11A93EC3C0086EF13 /* OGMHypnosisView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OGMHypnosisView.h; sourceTree = "<group>"; };
 		C8B9D5E21A93EC3C0086EF13 /* OGMHypnosisView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OGMHypnosisView.m; sourceTree = "<group>"; };
 		C8F1F9801A94777500247A9F /* matrix.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = matrix.png; sourceTree = "<group>"; };
+		C8F1FEF91A947FBA00247A9F /* Hypnosister-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Hypnosister-120.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 		C8B9D5BB1A93EAE30086EF13 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C8F1FEF91A947FBA00247A9F /* Hypnosister-120.png */,
 				C8F1F9801A94777500247A9F /* matrix.png */,
 				C8B9D5BC1A93EAE30086EF13 /* Info.plist */,
 				C8B9D5BD1A93EAE30086EF13 /* main.m */,
@@ -191,6 +194,7 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = C8B9D5AF1A93EAE30086EF13;
 			productRefGroup = C8B9D5B91A93EAE30086EF13 /* Products */;
@@ -210,6 +214,7 @@
 			files = (
 				C8B9D5C71A93EAE30086EF13 /* Main.storyboard in Resources */,
 				C8B9D5CC1A93EAE30086EF13 /* LaunchScreen.xib in Resources */,
+				C8F1FEFC1A947FBA00247A9F /* Hypnosister-120.png in Resources */,
 				C8F1F9811A94777500247A9F /* matrix.png in Resources */,
 				C8B9D5C91A93EAE30086EF13 /* Images.xcassets in Resources */,
 			);

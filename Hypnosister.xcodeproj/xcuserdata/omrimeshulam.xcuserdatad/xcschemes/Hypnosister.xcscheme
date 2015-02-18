@@ -34,6 +34,20 @@
                ReferencedContainer = "container:Hypnosister.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "520EA6E6187B1B1D0075B2EC"
+               BuildableName = "HypnosisterTests.xctest"
+               BlueprintName = "HypnosisterTests"
+               ReferencedContainer = "container:Hypnosister/Solutions/05-RedrawingAndUIScrollView/Hypnosister/Hypnosister.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -50,6 +64,16 @@
                BuildableName = "HypnosisterTests.xctest"
                BlueprintName = "HypnosisterTests"
                ReferencedContainer = "container:Hypnosister.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "520EA6E6187B1B1D0075B2EC"
+               BuildableName = "HypnosisterTests.xctest"
+               BlueprintName = "HypnosisterTests"
+               ReferencedContainer = "container:Hypnosister/Solutions/05-RedrawingAndUIScrollView/Hypnosister/Hypnosister.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
