@@ -8,6 +8,12 @@
 
 #import "OGMHypnosisView.h"
 
+@interface OGMHypnosisView ()
+
+@property (strong, nonatomic) UIColor *circleColor;
+
+@end
+
 @implementation OGMHypnosisView
 
 - (instancetype)initWithFrame:(CGRect)frame
@@ -16,6 +22,7 @@
     if(self){
         // All the OGMHypnosisViews start with a clear background color
         self.backgroundColor = [UIColor clearColor];
+        self.circleColor = [UIColor lightGrayColor];
     }
     
     return self;
@@ -48,8 +55,7 @@
     circlePath.lineWidth = 10;
     
     // Configure the drawing color to light gray
-    // Need UIColor as UIBezierPath can't set by itself, they are linked
-    [[UIColor lightGrayColor] setStroke];
+    [self.circleColor setStroke];
     
     // Drawing the circles line
     [circlePath stroke];
@@ -94,6 +100,33 @@
     //anything after this will not have a shadow
     CGContextRestoreGState(currentContext);
     
+}
+
+// When the finger touches the screen
+- (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    NSLog(@"%@ was touched", self);
+    
+    // Getting 3 random numbers between 0 and 1
+    float red = (arc4random() % 100) / 100;
+    float green = (arc4random() % 100) / 100;
+    float blue = (arc4random() % 100) / 100;
+    
+    UIColor *randomColor = [UIColor colorWithRed:(red)
+                                           green:green
+                                            blue:blue
+                                           alpha:1.0];
+    
+    self.circleColor = randomColor;
+    
+    
+}
+
+// custom setter to set setNeedsDisplay to get on the list of dirty views to rerender
+- (void) setCircleColor:(UIColor *)circleColor
+{
+    _circleColor = circleColor;
+    [self setNeedsDisplay];
 }
 
 
