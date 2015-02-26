@@ -16,14 +16,28 @@
 @implementation AppDelegate
 
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+- (BOOL)application:(UIApplication *)application
+    didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    CGRect firstFrame = self.window.bounds;
+    // Override point for customization after application launch
     
-    OGMHypnosisView *firstView  = [[OGMHypnosisView alloc] initWithFrame:firstFrame];
+    // Creating CGRects for frames
+    CGRect screenRect = self.window.bounds;
+    CGRect bigrRect = screenRect;
+    bigrRect.size.width *= 2.0;
+    bigrRect.size.height *= 2.0;
     
-    [self.window addSubview:firstView];
+    // Creating a screen-sized scroll view and adding it to the window
+    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:screenRect];
+    [self.window addSubview:scrollView];
+    
+    // Creating a super-sized hypnosis view adding it to the scroll view
+    OGMHypnosisView *hypnosisView = [[OGMHypnosisView alloc] initWithFrame:bigrRect];
+    [scrollView addSubview:hypnosisView];
+    
+    // Telling the scroll view how big its content area is
+    scrollView.contentSize = bigrRect.size;
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
