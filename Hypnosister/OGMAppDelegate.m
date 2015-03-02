@@ -9,8 +9,8 @@
 #import "OGMAppDelegate.h"
 #import "OGMHypnosisView.h"
 
-@interface AppDelegate ()
-
+@interface AppDelegate ()<UIScrollViewDelegate> // Conforming to the UIScrollViewSelegate
+@property (nonatomic, strong) OGMHypnosisView *hypnosisView;
 @end
 
 @implementation AppDelegate
@@ -29,25 +29,36 @@
     
     // Creating a screen-sized scroll view and adding it to the window
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:screenRect];
-    scrollView.pagingEnabled = YES;
+    scrollView.delegate = self;
+    scrollView.minimumZoomScale = 1.0;
+    scrollView.maximumZoomScale = 2.0;
+    //scrollView.pagingEnabled = YES;
     [self.window addSubview:scrollView];
     
     // Creating a screen-sized hypnosis view adding it to the scroll view
-    OGMHypnosisView *hypnosisView = [[OGMHypnosisView alloc] initWithFrame:screenRect];
-    [scrollView addSubview:hypnosisView];
+    self.hypnosisView = [[OGMHypnosisView alloc] initWithFrame:screenRect];
+    [scrollView addSubview:self.hypnosisView];
     
-    // Adding a second screen-sized hypnosis view just off the screen to the right
+    /* Deactivating second page as demoing scrolling feature and not working correctly with 2 pages
+     // Adding a second screen-sized hypnosis view just off the screen to the right
     screenRect.origin.x += screenRect.size.width;
     OGMHypnosisView *anotherView = [[OGMHypnosisView alloc] initWithFrame:screenRect];
     [scrollView addSubview:anotherView];
+     */
     
     // Telling the scroll view how big its content area is
-    scrollView.contentSize = bigrRect.size;
+    //scrollView.contentSize = bigrRect.size; //if using the 2 pages
+    scrollView.contentSize = screenRect.size;
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
     return YES;
+}
+
+- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
+{
+    return self.hypnosisView;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
